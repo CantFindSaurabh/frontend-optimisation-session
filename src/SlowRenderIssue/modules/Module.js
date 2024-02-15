@@ -12,7 +12,7 @@ export const StarWarsProvider = ({ children }) => {
         const response = await axios.get(
           "https://jsonplaceholder.typicode.com/photos"
         );
-        setPosts(response.data);
+        setPosts(response.data.slice(0, 250));
       } catch (error) {
         console.error("Error fetching posts:", error);
       }
